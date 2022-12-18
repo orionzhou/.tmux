@@ -348,11 +348,11 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
-# unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
+set -gu prefix2
+unbind F1
+unbind C-a
+set -g prefix F1
+bind F1 send-prefix
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind v new-window -c #{pane_current_path} #!important
@@ -360,6 +360,16 @@ tmux_conf_copy_to_os_clipboard=false
 # move status line to top
 #set -g status-position top
 
+unbind F8
+bind-key -n F8 command-prompt "rename-window '%%'"
+unbind F9
+bind-key -n F9 new-window
+unbind F10
+bind-key -n F10 detach
+unbind F11
+bind-key -n F11 previous-window
+unbind F12
+bind-key -n F12 next-window
 
 # -- tpm -----------------------------------------------------------------------
 
